@@ -19,7 +19,7 @@ spec:
           - name: NODE_ENV
             value: production
           - name: REACT_APP_API_V1_ENDPOINT
-            value: http://app-demo-ms-service
+            value: http://app-demo-ms-service:8081
         
 ---
 apiVersion: v1

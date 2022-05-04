@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app-demo-ui-deployment
-          image: gcr.io/double-aleph-348710/app-demo-ui:v6
+          image: gcr.io/double-aleph-348710/app-demo-ui:v7
           
         
 ---

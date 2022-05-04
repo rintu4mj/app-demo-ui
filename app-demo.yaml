@@ -15,6 +15,11 @@ spec:
       containers:
         - name: app-demo-ui-deployment
           image: gcr.io/double-aleph-348710/app-demo-ui:v4
+          env:
+          - name: NODE_ENV
+            value: production
+          - name: REACT_APP_API_V1_ENDPOINT
+            value: http://app-demo-ms-service
         
 ---
 apiVersion: v1

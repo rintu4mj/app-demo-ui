@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
+import React, { useState, useEffect } from 'react';
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     
-    axioss.get(`http://app-demo-service:8080/api/tutorials`)
+    axios.get(`http://app-demo-service:8080/api/tutorials`)
     .then(res => {
       const lists = res.data;
       setList(lists);

@@ -11,7 +11,7 @@ spec:
     http:
       paths:
       - pathType: Prefix
-        path: "/api/status"
+        path: "/api/.*"
         backend:
           service:
             name: app-demo-ms-service

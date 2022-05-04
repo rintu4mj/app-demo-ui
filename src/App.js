@@ -10,7 +10,7 @@ function App() {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     
-    axios.get(`http://app-demo-service:8080/api/tutorials`)
+    axios.get(`http://app-demo-ms-service:8081/api/status`)
     .then(res => {
       const lists = res.data;
       setList(lists);

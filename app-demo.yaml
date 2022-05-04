@@ -6,11 +6,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app-demo-ui
+      app: app-demo
   template:
     metadata:
       labels:
-        app: app-demo-ui
+        app: app-demo
     spec:
       containers:
         - name: app-demo-ui-deployment
@@ -24,7 +24,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    app: app-demo-ui
+    app: app-demo
   ports:
     - name: app-demo-ui
       port: 3000

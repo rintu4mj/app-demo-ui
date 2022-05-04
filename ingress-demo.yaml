@@ -10,11 +10,17 @@ spec:
   - host: "34.135.240.58.nip.io"
     http:
       paths:
-          - path: /?(.*)
-            backend:
-              serviceName: app-demo-ui-service
-              servicePort: 3000
-          - path: /api/?(.*)
-            backend:
-              serviceName: app-demo-ms-service
-              servicePort: 8081
+      - pathType: Prefix
+        path: "/api/?(.*)"
+        backend:
+          service:
+            name: app-demo-ms-service
+            port:
+              number: 8081
+      - pathType: Prefix
+        path: "/?(.*)"
+        frontend:
+          service:
+            name: app-demo-ui-service
+            port:
+              number: 3000

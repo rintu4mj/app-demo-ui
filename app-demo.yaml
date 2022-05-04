@@ -15,7 +15,6 @@ spec:
       containers:
         - name: app-demo-ui-deployment
           image: gcr.io/double-aleph-348710/app-demo-ui:v1
-          imagePullPolicy: Never
         
 ---
 apiVersion: v1

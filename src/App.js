@@ -1,7 +1,22 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios';
 
 function App() {
+
+  const [list, setList] = useState(null);
+
+  // Similar to componentDidMount and componentDidUpdate:
+  useEffect(() => {
+    
+    axioss.get(`http://app-demo-service:8080/api/tutorials`)
+    .then(res => {
+      const lists = res.data;
+      setList(lists);
+    })
+
+  });
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +30,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          {list}
         </a>
       </header>
     </div>

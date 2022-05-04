@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: app-demo-ui-deployment
-          image: gcr.io/double-aleph-348710/app-demo-ui:v4
+          image: gcr.io/double-aleph-348710/app-demo-ui:v5
           env:
           - name: NODE_ENV
             value: production

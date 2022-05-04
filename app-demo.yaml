@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-demo-ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-demo-ui
+  template:
+    metadata:
+      labels:
+        app: app-demo-ui
+    spec:
+      containers:
+        - name: app-demo-ui-deployment
+          image: gcr.io/double-aleph-348710/app-demo-ui:v1
+          imagePullPolicy: Never
+        
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: app-demo-ui-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: app-demo-ui
+  ports:
+    - name: app-demo-ui
+      port: 3000
+      targetPort: 3000

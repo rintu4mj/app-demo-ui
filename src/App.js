@@ -10,7 +10,7 @@ function App() {
   // Similar to componentDidMount and componentDidUpdate:
   useEffect(() => {
     
-    axios.get(`http://app-demo-ms-service:8081/api/status`)
+    axios.get(`${process.env.REACT_APP_API_V1_ENDPOINT}/api/status`)
     .then(res => {
       const lists = res.data;
       setList(lists);
